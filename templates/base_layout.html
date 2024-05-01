@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %} <!-- Load the static folder to use the files like css-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+        Aldrin Cerezo
+        {% endblock title %}
+    </title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"> <!-- templating to add CSS file-->
+    <script src="{% static 'js/main.js' %}" defer></script> <!-- templating to add JS file-->
+</head>
+
+<body>
+    <header>
+        {% include 'base_nav.html' %}
+    </header>
+    <main>
+        {% block content %}
+        {% endblock content %}
+    </main>
+    <footer>
+        {% include 'base_footer.html' %}
+    </footer>
+</body>
+
+</html>
